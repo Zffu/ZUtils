@@ -61,3 +61,16 @@ Math.hypothenuse = function(side1, side2) {
     let root = Math.pow(side1, 2) + Math.pow(side2, 2);
     return Math.sqrt(root);
 }
+
+/**
+ * From the hypothenuse of a triangle and one of its two other sides, calculates the last side using the Pythagorean theorem.
+ * Only works if the triangle is angled.
+ * @param {*} hypothenuse the hypothenuse of the triangle
+ * @param {*} side1 the other side's length.
+ */
+Math.reverseHypothenuse = function(hypothenuse, side1) {
+    assert(typeof hypothenuse == "number" && typeof side1 == "number", "The provided numbers aren't numbers!")
+
+    let root = Math.pow(hypothenuse, 2) - Math.pow(side1, 2);
+    return Math.sqrt(root);
+}
