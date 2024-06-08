@@ -16,12 +16,12 @@ Math.assertEquation = function(equation, message) {
 }
 
 /**
- * Solves a sigma (aka summation) with the provided equation.
+ * Solves a summation (aka sigma) with the provided equation.
  * @param {*} start the start bound of the summation
  * @param {*} end  the end bound of the summation
  * @param {*} equation the equation to do on the index of the summation
  */
-Math.sigma = function(start, end, equation) {
+Math.summation = function(start, end, equation) {
     Math.assertEquation(equation, "The provided function isn't an equation!")
     assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
@@ -32,6 +32,25 @@ Math.sigma = function(start, end, equation) {
     }
 
     return sum;
+}
+
+/**
+ * Solves a product with the provided equation.
+ * @param {*} start the start bound of the product
+ * @param {*} end  the end bound of the product
+ * @param {*} equation the equation to do on the index of the product
+ */
+Math.product = function(start, end, equation) {
+    Math.assertEquation(equation, "The provided function isn't an equation!")
+    assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
+
+    var product = 0;
+
+    for(let i = start; i < end; i++) {
+        product *= equation(i);
+    }
+
+    return product;
 }
 
 /**
