@@ -9,10 +9,23 @@
  * @param {*} message the message to say if the function isn't a valid equation with one variable
  */
 Math.assertEquation = function(equation, message) {
+    if(typeof equation == "number") return;
+
     if(equation.length != 1) throw message;
     
     var output = equation(1);
     if(typeof output != "number") throw message;
+}
+
+/**
+ * Safely solves an equation, can be either a number or an equation.
+ * @param {*} parameter 
+ */
+Math.solveEquation = function(equation, parameter) {
+    Math.assertEquation(equation, "The provided equation isn't an equation nor a number!")
+
+    if(typeof equation == "number") return equation;
+    return equation(parameter);
 }
 
 /**
@@ -102,4 +115,14 @@ Math.reverseHypothenuse = function(hypothenuse, side1) {
 Math.average = function(sum, entries) {
     assert(typeof sum == "number" && typeof entries == "number", "The provided numbers aren't numbers!")
     return sum / entries;
+}
+
+/**
+ * Limits a number to the provided bound. If the number is greater than that bound, return the equation result, if not, return the original number.
+ * @param {*} number 
+ * @param {*} bound 
+ * @param {*} equation 
+ */
+Math.lim = function(number, bound, equation) {
+
 }
