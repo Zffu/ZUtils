@@ -33,3 +33,18 @@ Math.sigma = function(start, end, equation) {
 
     return sum;
 }
+
+/**
+ * The Mathematical Heavenside function.
+ * Returns 0 if number < 0
+ * Returns 0.5 if number = 0
+ * Returns 1 if number > 0
+ * @param {*} number the number to check
+ */
+Math.heavenside = function(number) {
+    assert(typeof number == "number", "The provided number isn't a number!")
+    
+    if(number < 0) return 0;
+    if(number == 0) return 0.5;
+    return 1;
+}
