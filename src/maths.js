@@ -23,6 +23,7 @@ Math.assertEquation = function(equation, message) {
  */
 Math.sigma = function(start, end, equation) {
     Math.assertEquation(equation, "The provided function isn't an equation!")
+    assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
     var sum = 0;
 
