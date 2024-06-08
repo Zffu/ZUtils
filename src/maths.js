@@ -62,6 +62,10 @@ Math.product = function(start, end, equation) {
     Math.assertEquation(equation, "The provided equation isn't an equation nor a number!")
     assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
+    if(typeof equation == "number") {
+        return Math.pow(equation, (end - start));
+    }
+
     var product = 0;
 
     for(let i = start; i < end; i++) {
