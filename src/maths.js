@@ -41,7 +41,7 @@ Math.summation = function(start, end, equation) {
     var sum = 0;
 
     for(let i = start; i < end; i++) {
-        sum += solveEquation(equation, i);
+        sum += Math.solveEquation(equation, i);
     }
 
     return sum;
@@ -60,7 +60,7 @@ Math.product = function(start, end, equation) {
     var product = 0;
 
     for(let i = start; i < end; i++) {
-        product *= solveEquation(equation, i);
+        product *= Math.solveEquation(equation, i);
     }
 
     return product;
