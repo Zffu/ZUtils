@@ -22,6 +22,8 @@ Math.assertEquation = function(equation, message) {
  * @param {*} equation the equation to do on the index of the summation
  */
 Math.sigma = function(start, end, equation) {
+    assertEquation(equation, "The provided function isn't an equation!")
+
     var sum = 0;
 
     for(let i = start; i < end; i++) {
