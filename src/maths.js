@@ -133,5 +133,10 @@ Math.average = function(sum, entries) {
  * @param {*} equation 
  */
 Math.lim = function(number, bound, equation) {
-
+    Math.assertEquation(equation, "The provided equation isn't an equation nor a number!");
+    assert(typeof number == "number" && typeof bound == "number", "The provided numbers aren't numbers!");
+    
+    if(number > bound) {
+        return Math.solveEquation(equation)
+    }
 }
