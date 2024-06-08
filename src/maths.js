@@ -139,4 +139,6 @@ Math.lim = function(number, bound, equation) {
     if(number > bound) {
         return Math.solveEquation(equation)
     }
+    
+    return number;
 }
