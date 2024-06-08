@@ -38,6 +38,11 @@ Math.summation = function(start, end, equation) {
     Math.assertEquation(equation, "The provided equation isn't an equation nor a number!")
     assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
+    // Static Equation Optimization
+    if(typeof equation == "number") {
+        return (start - end) * equation;
+    }
+
     var sum = 0;
 
     for(let i = start; i < end; i++) {
