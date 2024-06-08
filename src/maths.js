@@ -4,6 +4,18 @@
  */
 
 /**
+ * Asserts that a function is indeed a one-variable Math equation, or else, say the provided message
+ * @param {*} equation the function to check if its an equation
+ * @param {*} message the message to say if the function isn't a valid equation with one variable
+ */
+Math.assertEquation = function(equation, message) {
+    if(equation.length != 1) throw message;
+    
+    var output = equation(1);
+    if(typeof output != "number") throw message;
+}
+
+/**
  * Solves a sigma (aka summation) with the provided equation.
  * @param {*} start the start bound of the summation
  * @param {*} end  the end bound of the summation
