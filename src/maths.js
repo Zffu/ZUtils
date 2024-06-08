@@ -27,7 +27,7 @@ Math.sigma = function(start, end, equation) {
     var sum = 0;
 
     for(let i = start; i < end; i++) {
-        sum = equation(i);
+        sum += equation(i);
     }
 
     return sum;
