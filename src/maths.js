@@ -40,7 +40,7 @@ Math.summation = function(start, end, equation) {
 
     // Static Equation Optimization
     if(typeof equation == "number") {
-        return (start - end) * equation;
+        return (end - start) * equation;
     }
 
     var sum = 0;
