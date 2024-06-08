@@ -35,13 +35,13 @@ Math.solveEquation = function(equation, parameter) {
  * @param {*} equation the equation to do on the index of the summation
  */
 Math.summation = function(start, end, equation) {
-    Math.assertEquation(equation, "The provided function isn't an equation!")
+    Math.assertEquation(equation, "The provided equation isn't an equation nor a number!")
     assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
     var sum = 0;
 
     for(let i = start; i < end; i++) {
-        sum += equation(i);
+        sum += solveEquation(equation, i);
     }
 
     return sum;
@@ -54,13 +54,13 @@ Math.summation = function(start, end, equation) {
  * @param {*} equation the equation to do on the index of the product
  */
 Math.product = function(start, end, equation) {
-    Math.assertEquation(equation, "The provided function isn't an equation!")
+    Math.assertEquation(equation, "The provided equation isn't an equation nor a number!")
     assert(typeof start == "number" && typeof end == "number", "The provided numbers are not numbers!")
 
     var product = 0;
 
     for(let i = start; i < end; i++) {
-        product *= equation(i);
+        product *= solveEquation(equation, i);
     }
 
     return product;
