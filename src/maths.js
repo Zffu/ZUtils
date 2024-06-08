@@ -74,3 +74,13 @@ Math.reverseHypothenuse = function(hypothenuse, side1) {
     let root = Math.pow(hypothenuse, 2) - Math.pow(side1, 2);
     return Math.sqrt(root);
 }
+
+/**
+ * Calculates the average with the provided entries sum and the total amount of entries.
+ * @param {*} sum the entries sum.
+ * @param {*} entries the total amount of entries
+ */
+Math.average = function(sum, entries) {
+    assert(typeof sum == "number" && typeof entries == "number", "The provided numbers aren't numbers!")
+    return sum / entries;
+}
