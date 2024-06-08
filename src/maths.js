@@ -43,8 +43,21 @@ Math.sigma = function(start, end, equation) {
  */
 Math.heavenside = function(number) {
     assert(typeof number == "number", "The provided number isn't a number!")
-    
+
     if(number < 0) return 0;
     if(number == 0) return 0.5;
     return 1;
+}
+
+/**
+ * Calculates the hypothenuse of a triangle based on the 2 provided sides by using the Pythagorean theorem.
+ * Only works if the triangle is angled.
+ * @param {*} side1 the first side's length
+ * @param {*} side2 the second side's length
+ */
+Math.hypothenuse = function(side1, side2) {
+    assert(typeof side1 == "number" && typeof side2 == "number", "The provided numbers aren't numbers!")
+
+    let root = Math.pow(side1, 2) + Math.pow(side2, 2);
+    return Math.sqrt(root);
 }
